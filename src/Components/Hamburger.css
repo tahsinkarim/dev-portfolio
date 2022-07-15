@@ -1,0 +1,64 @@
+.nav-toggle {
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 1.5em;
+  height: 3px;
+  background: #fff;
+  mix-blend-mode: exclusion;
+  transition: background 0.4s cubic-bezier(1, 0, 0, 1),
+    transform 0.3s cubic-bezier(1, 0, 0, 1), width 0.3s cubic-bezier(1, 0, 0, 1);
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+}
+.hamburger::before {
+  bottom: 7px;
+}
+.hamburger::after {
+  top: 7px;
+}
+.hamburger {
+  width: 2em;
+  height: 2px;
+  display: block;
+  position: relative;
+}
+.nav-toggle.active:hover .hamburger {
+  transform: none;
+}
+.nav-toggle:hover .hamburger::before {
+  transform: translateY(15px);
+}
+.nav-toggle:hover .hamburger::after {
+  transform: translateY(-15px);
+}
+.nav-toggle.active .hamburger {
+  margin-left: 5px;
+  width: 2em;
+  background: #252525;
+}
+.nav-toggle.active .hamburger::before {
+  transform: translateY(15px) translateX(-10px);
+  background: #252525;
+}
+.nav-toggle.active .hamburger::after {
+  transform: translateY(-15px) translateX(4px);
+  background: #252525;
+}
+.logo {
+  color: #fff;
+  mix-blend-mode: exclusion;
+  font-size: 12px;
+  font-family: "Poppins-SemiBold";
+  letter-spacing: 1px;
+  margin-left: 18px;
+}
